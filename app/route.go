@@ -8,7 +8,9 @@ import (
 
 func initRouter() *gin.Engine {
 	router := gin.Default()
-	router.LoadHTMLGlob("views/*") //渲染模板
+	router.LoadHTMLGlob("views/**/*") //渲染模板
+	//静态资源
+	router.Static("/public","./public")
 	// router.GET("/", IndexApi)
 	router.POST("/user", AddUserApi)
 	router.GET("/userlist/list", GetUserApi)

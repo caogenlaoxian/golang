@@ -25,7 +25,7 @@ func IndexList(c *gin.Context) {
 		log.Fatalln("err")
 	}
 	fmt.Println(lists)
-	c.HTML(http.StatusOK, "index.html", gin.H{
+	c.HTML(http.StatusOK, "msg/index.html", gin.H{
 		"title": "gin用户界面",
 		"data":  lists,
 	})
